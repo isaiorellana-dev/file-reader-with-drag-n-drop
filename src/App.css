@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  color: white;
+}
+
+.App a {
+  color: white;
+  font-weight: bold;;
 }
 
 .App-logo {

@@ -1,0 +1,45 @@
+.file-reader {
+  width: 320px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  outline: 3px dotted rgba(163, 157, 157, 0.333);
+  margin: 0 auto;
+  padding: 15px;
+  img {
+    width: 200px;
+  }
+  &__info-area {
+    padding: 5px;
+    &--title {
+      animation: luz 1.5s linear infinite;
+      margin-bottom: 5px;
+    }
+    &--description {
+      padding: 0;
+      margin: 0;
+    }
+    &--button {
+      padding: 0;
+      margin: 0;
+      margin-bottom: 20px;
+      color: rgb(3 130 239);
+      background-color: none;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes luz {
+  0% {
+    color: #eee;
+  }
+  50% {
+    color: rgba(238, 238, 238, 0.418);
+  }
+  100% {
+    color: #eee;
+  }
+}

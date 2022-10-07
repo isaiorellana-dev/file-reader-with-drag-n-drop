@@ -1,0 +1,14 @@
+.file-watcher {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 305px;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 3px solid #555;
+  padding: 10px;
+  img {
+    width: 100%;
+  }
+}

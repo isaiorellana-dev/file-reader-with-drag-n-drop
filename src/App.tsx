@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+// import logo from "./logo.svg"
+import "./App.css"
+import DropZone from "./components/DropZone"
+import FileWatcher from "./components/FileWatcher"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface props {
+  file: JSX.IntrinsicAttributes
 }
 
-export default App;
+function App() {
+  const [file, setFile] = React.useState<props>()
+  return (
+    <div className="App">
+      <h1>File Reader App</h1>
+      <p>
+        {" "}
+        <p>
+          Made with create-react-app by{" "}
+          <a href="https://github.com/isaiorellana-dev">Isaí Orellana</a>
+        </p>
+      </p>
+      <DropZone file={file} setFile={setFile} />
+      <FileWatcher file={file} />
+    </div>
+  )
+}
+
+export default App
