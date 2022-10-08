@@ -1,27 +1,33 @@
-# Getting Started with Create React App
+# File Reader con Drag and Drop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Un proyecto que implementa una zona donde arrastrar imagenes y mostrarlas, tambien incluye un input de tipo file.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+Este proyecto esta creado con create-react-app.
+Despues de haberlo clonado debemos correr los siguientes comandos:
 
-### `npm start`
+```bash
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Cargar archivos con Drag and Drop y FileReader with React JS
 
-## Cargar archivos con Drag and Drop y FileReader
+Vamos a usar los eventos de drag and drop para hacer dinámica la zona que recibirá los archivos.
+Con los eventos:
 
-Vamos a usar los eventos de drag and drop para hacer dinámica la zona que recibirá los archivos
+- `onDragOver`
+- `onDragLeave`
+- `onDrop`
 
 ### onDragOver()
 
-En en el evento `onDragOver` vamos a cambiar los estilos del contenedor donde vamos a arrastar el archivo, para indicarle al usuario que esa es la zona donde debe soltar el archivo.
-Por defecto los elementos `HTML` traen des-habilitada la opción de arrastar y soltar items encima, por lo tanto debemos llamar a la función `preventDefault()`, esto va a permitir que podamos usar el evento `onDrop` mas adelante.
+En en el evento `onDragOver` vamos a cambiar los estilos del contenedor donde vamos a arrastrar el archivo, para indicarle al usuario que esa es la zona donde debe soltar el archivo.
+Por defecto los elementos `HTML` traen des-habilitada la opción de arrastrar y soltar items encima, por lo tanto debemos llamar a la función `preventDefault()`, esto va a permitir que podamos usar el evento `onDrop` mas adelante.
 
 ```jsx
 const dragOver = (e: any) => {
@@ -60,7 +66,7 @@ return (
 
 ### onDrop()
 
-En el evento `onDrop` es donde debemos ejecutar el código que cargara el archivo, para eso e que vamos a utilizar `FileReader`.
+En el evento `onDrop` es donde debemos ejecutar el código que cargara el archivo, para eso vamos a utilizar `FileReader`.
 Creamos una función que reciba el archivo como parámetro, haga una instancia del `FileReader` y utilice el evento `onload` para guardarlo en un estado con `useState`
 
 ```jsx
@@ -100,7 +106,7 @@ return (
 
 ### Cargar con input file
 
-Si queremos tambien usar un input solo debemos pasarle la funcion `guardarArchivo()`
+Si queremos usar un input solo debemos pasarle la función `guardarArchivo()`
 en su evento `onChange`
 
 ```jsx
